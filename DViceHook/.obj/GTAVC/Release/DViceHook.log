@@ -1,0 +1,7 @@
+﻿  DViceHook.cpp
+C:\Users\luka\source\repos\DViceHook\DViceHook\DViceHook.cpp(39,13): warning C4101:  'cp': unreferenced local variable
+C:\Users\luka\source\repos\DViceHook\DViceHook\DViceHook.cpp(43,5): warning C4101:  'veh_speed': unreferenced local variable
+  Generating code
+C:\Users\luka\source\repos\DViceHook\DViceHook\DViceHook.cpp(70): warning C4700: uninitialized local variable 'ccm' used
+  Finished generating code
+  DViceHook.vcxproj -> J:\Vice City\scripts\DViceHook.VC.asi
