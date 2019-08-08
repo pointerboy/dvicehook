@@ -36,8 +36,6 @@ public:
 		{
 			CVehicle* vehicle; CVector posn; float angle;
 			CPed* player = FindPlayerPed();
-			CPickup* cp;
-			CCamera* ccm;
 
 			float
 				veh_speed,
@@ -50,10 +48,43 @@ public:
 				{
 					VehInfoDisplay = false;
 					CHud::SetHelpMessage("Vehicle info off!", true, false);
+
+					return;
+
 				} else 
 				{
 					VehInfoDisplay = true;
 					CHud::SetHelpMessage("Vehicle info is on!", true, false);
+
+					return;
+				}
+			}
+
+			if (GetKeyState(VK_SHIFT) & 0x8000)
+			{
+
+				if (KeyPressed(VK_UP))
+				{
+					player->ApplyMoveSpeed();
+					player->ApplyMoveForce(0, 0, 5);
+				}
+
+				if (KeyPressed(VK_DOWN))
+				{
+					player->ApplyMoveSpeed();
+					player->ApplyMoveForce(0, 0, -5);
+				}
+
+				if (KeyPressed(VK_LEFT))
+				{
+					player->ApplyMoveSpeed();
+					player->ApplyMoveForce(0, -5, 0);
+				}
+
+				if (KeyPressed(VK_RIGHT))
+				{
+					player->ApplyMoveSpeed();
+					player->ApplyMoveForce(0, 5, 0);
 				}
 			}
 
@@ -67,9 +98,6 @@ public:
 
 				CHud::SetHelpMessage("DViceHook plugin has loaded. If you have any issues report them to the GitHub issue report list. Keep in mind that this is still in early alpha version and that you will most likely experience crashes.", false, false);
 				
-				ccm->Init();
-
-				ccm->RotateX(20);
 				return;
 			}
 
